@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+
+{% block title %}
+   Bottles
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-10 p-4">
+                <div class="container mt-3">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>{% trans 'id' %}</th>
+                                <th>{% trans 'Number of Times Sold' %}</th>
+                                <th>{% trans 'Bottle Status' %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for bottle in bottles %}
+                            <tr>
+                                <td>{{ bottle.bottleId }}</td>
+                                <td>{{ bottle.number_of_times_Sold }}</td>
+                                <td>{{ bottle.get_bottle_status_display }}</td>
+                            {% empty %}
+                            <tr>
+                                <td colspan="2">{% trans 'No bottles found.' %}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+{% endblock %}

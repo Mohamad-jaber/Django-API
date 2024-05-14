@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-07 11:17+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\anharapp\settings.py:141
+msgid "English"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\bottles.html:14
+msgid "id"
+msgstr ""
+
+#: .\dashboard\templates\dashboard\bottles.html:15
+msgid "Number of Times Sold"
+msgstr "عدد مرات البيع"
+
+#: .\dashboard\templates\dashboard\bottles.html:16
+msgid "Bottle Status"
+msgstr "حاله العبوه"
+
+#: .\dashboard\templates\dashboard\bottles.html:27
+msgid "No bottles found."
+msgstr "لم يتم العثور على عملاء."
+
+#: .\dashboard\templates\dashboard\index.html:14
+msgid "Total Orders"
+msgstr "الطلبات"
+
+#: .\dashboard\templates\dashboard\index.html:22
+msgid "Average Bottles Per Order"
+msgstr "متوسط الزجاجات لكل طلب"
+
+#: .\dashboard\templates\dashboard\index.html:30
+msgid "Average Payment Per Day"
+msgstr "متوسط الدفع في اليوم الواحد"
+
+#: .\dashboard\templates\dashboard\index.html:38
+msgid "Total Bottles"
+msgstr "العبوات"
+
+#: .\dashboard\templates\dashboard\index.html:49
+msgid "Available Bottles"
+msgstr "الزجاجات المتوفرة"
+
+#: .\dashboard\templates\dashboard\index.html:57
+msgid "Sold Bottles"
+msgstr "الزجاجات المباعة"
+
+#: .\dashboard\templates\dashboard\index.html:65
+msgid "Discarded Bottles"
+msgstr "العبوات المتلفه"
+
+#: .\dashboard\templates\dashboard\index.html:72
+msgid "Total Payment"
+msgstr "المدفوعات"
+
+#: .\dashboard\templates\dashboard\index.html:82
+msgid "Average Payment Per Month"
+msgstr "متوسط الدفع شهريا"
+
+#: .\dashboard\templates\dashboard\index.html:90
+msgid "Top 5 Users"
+msgstr "أفضل 5 مستخدمين"
+
+#: .\dashboard\templates\dashboard\index.html:94
+msgid "Name"
+msgstr "الاسم"
+
+#: .\dashboard\templates\dashboard\index.html:95
+#: .\dashboard\templates\layout.html:44
+msgid "Orders"
+msgstr "الطلبات"
+
+#: .\dashboard\templates\dashboard\index.html:107
+msgid "No customers found."
+msgstr "لم يتم العثور على عملاء."
+
+#: .\dashboard\templates\dashboard\orders.html:14
+#: .\dashboard\templates\dashboard\payment.html:14
+msgid "Amount"
+msgstr "المبلغ المستحق"
+
+#: .\dashboard\templates\dashboard\orders.html:15
+#: .\dashboard\templates\dashboard\payment.html:15
+msgid "Date"
+msgstr "تاريخ"
+
+#: .\dashboard\templates\dashboard\orders.html:16
+msgid "Order Quantity"
+msgstr "كمية الطلب"
+
+#: .\dashboard\templates\dashboard\orders.html:17
+msgid "Order Status"
+msgstr "حالة الطلب"
+
+#: .\dashboard\templates\dashboard\orders.html:18
+#: .\dashboard\templates\dashboard\payment.html:16
+msgid "Customer"
+msgstr "عميل"
+
+#: .\dashboard\templates\dashboard\orders.html:32
+msgid "No orders found."
+msgstr "لم يتم العثور على عملاء."
+
+#: .\dashboard\templates\dashboard\payment.html:17
+msgid "Receiver"
+msgstr "المستلم"
+
+#: .\dashboard\templates\dashboard\payment.html:30
+msgid "No payments found."
+msgstr "لم يتم العثور على عملاء."
+
+#: .\dashboard\templates\layout.html:25
+msgid "Navigation"
+msgstr "التنقل"
+
+#: .\dashboard\templates\layout.html:30
+msgid "Language"
+msgstr "اللغه"
+
+#: .\dashboard\templates\layout.html:42
+msgid "Home"
+msgstr ""
+
+#: .\dashboard\templates\layout.html:43
+msgid "Payments"
+msgstr "المدفوعات"
+
+#: .\dashboard\templates\layout.html:45
+msgid "Bottles"
+msgstr "العبوات"
+
+#: .\inventory\models.py:9
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#: .\inventory\models.py:10
+msgid "Approved"
+msgstr "تمت الموافقة"
+
+#: .\inventory\models.py:11
+msgid "Delivered"
+msgstr "تم التوصيل"
+
+#: .\inventory\models.py:12
+msgid "Cancelled"
+msgstr "ألغيت"
+
+#: .\inventory\models.py:16
+msgid "Available"
+msgstr "متوفرة"
+
+#: .\inventory\models.py:17
+msgid "Sold"
+msgstr "مبيعه"
+
+#: .\inventory\models.py:18
+msgid "Discarded"
+msgstr "متلفه"

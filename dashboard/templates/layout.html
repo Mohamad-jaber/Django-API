@@ -1,0 +1,58 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="{% get_current_language as LANGUAGE_CODE %}"
+      dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 bg-dark text-white p-3 mb-3">
+            <h1>
+                {% block title %}
+                {% endblock %}
+            </h1>
+        </div>
+        <div class="col-md-2 bg-light p-4">
+            <h4>{% trans 'Navigation' %}</h4>
+            <form action="{% url 'set_language' %}" method="post" class="d-flex align-items-center">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.path }}">
+                <div class="form-group mb-0">
+                    <label for="language-select" class="me-2">{% trans 'Language' %}:</label>
+                    <select id="language-select" name="language" class="form-select form-select-sm"
+                            onchange="this.form.submit()" style="width: auto;">
+                        {% get_available_languages as LANGUAGES %}
+                        {% for code, name in LANGUAGES %}
+                            <option value="{{ code }}"
+                                    {% if code == LANGUAGE_CODE %}selected{% endif %}>{{ name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </form>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="{% url 'dashboard' %}" class="nav-link">{% trans 'Home' %}</a></li>
+                <li class="nav-item"><a href="{% url 'payment' %}" class="nav-link">{% trans 'Payments' %}</a></li>
+                <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link">{% trans 'Orders' %}</a></li>
+                <li class="nav-item"><a href="{% url 'bottles' %}" class="nav-link">{% trans 'Bottles' %}</a></li>
+            </ul>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+        <div class="col-12 bg-dark text-white p-3 mt-4">
+            <p>Copyright © 2024 Your Company</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

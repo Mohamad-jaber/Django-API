@@ -1,0 +1,65 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-areas:
+        "sidebar header header"
+        "sidebar main main"
+        "footer footer footer";
+    grid-template-rows: 60px 1fr 30px;
+    grid-template-columns: 200px 1fr;
+    height: 100vh;
+}
+
+.dashboard-sidebar {
+    grid-area: sidebar;
+    background: #f4f4f4;
+    padding: 15px;
+}
+
+.dashboard-sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard-sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px;
+}
+
+.dashboard-main {
+    grid-area: main;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Ensures space around items */
+    align-items: stretch; /* Makes items of equal height */
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px #ccc;
+    flex: 1 1 22%; /* Adjusts the basis to slightly less than 25% to fit four in a row */
+    text-align: center;
+    margin: 10px; /* Optional, adds spacing between cards */
+}
+
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 1 48%; /* Adjust for smaller screens, two cards per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%; /* Stacks cards vertically on very small screens */
+    }
+}
+

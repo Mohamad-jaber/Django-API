@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+
+{% block title %}
+   Orders
+{% endblock %}
+
+{% block content %}
+            <div class="col-md-10 p-4">
+                <div class="container mt-3 ">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>{% trans 'Amount' %}</th>
+                                <th>{% trans 'Date' %}</th>
+                                <th>{% trans 'Order Quantity' %}</th>
+                                <th>{% trans 'Order Status' %}</th>
+                                <th>{% trans 'Customer' %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>{{ order.id }}</td>
+                                <td>{{ order.order_date|date:"Y-m-d" }}</td>
+                                <td>{{ order.order_quantity }}</td>
+                                <td>{{ order.get_order_status_display }}</td>
+                                <td>{{ order.customer }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="2">{% trans 'No orders found.' %}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+{% endblock %}

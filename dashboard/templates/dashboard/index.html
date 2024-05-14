@@ -1,0 +1,114 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+
+{% block title %}
+   Dashboard
+{% endblock %}
+
+{% block content %}
+            <div class="col-md-10 p-4">
+                <div class="row row-cols-1 row-cols-lg-4 g-4 mb-2">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{% trans 'Total Orders' %}</h5>
+                                <p class="card-text">{{ total_orders }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{% trans 'Average Bottles Per Order' %}</h5>
+                                <p class="card-text">{{ avg_bottles_per_order }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{% trans 'Average Payment Per Day' %}</h5>
+                                <p class="card-text">{{ avg_payment_per_day }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{% trans 'Total Bottles' %}</h5>
+                                <p class="card-text">{{ total_bottles }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-lg-4 g-4 mb-2">
+
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{% trans 'Available Bottles' %}</h5>
+                                <p class="card-text">{{ available_bottles  }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{% trans 'Sold Bottles' %}</h5>
+                                <p class="card-text">{{ sold_bottles  }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{% trans 'Discarded Bottles' %}</h5>
+                                <p class="card-text">{{ discarded_bottles }}</p>
+                            </div>
+                        </div>
+                    </div><div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{% trans 'Total Payment' %}</h5>
+                                <p class="card-text">{{ total_payment }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-lg-4 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{% trans 'Average Payment Per Month' %}</h5>
+                                <p class="card-text">{{ avg_payment_per_month  }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="container mt-3">
+                    <h3>{% trans 'Top 5 Users' %}</h3>
+                    <table class="table table-striped sortable">
+                        <thead>
+                            <tr>
+                                <th scope="col">{% trans 'Name' %}</th>
+                                <th scope="col">{% trans 'Orders' %}</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for customer in top_customers %}
+                                <tr>
+                                    <td>{{ customer.customer__username }}</td>
+                                    <td>{{ customer.order_count }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="2">{% trans 'No customers found.' %}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+{% endblock %}
